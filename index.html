@@ -3,220 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seungjun Lee | Portfolio</title>
-    <!-- 구글 폰트 불러오기 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Seungjun Lee | Professional Portfolio</title>
+    <!-- 고급스러운 폰트 조합: 제목은 Playfair Display(선택적), 본문은 Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* 기본 설정 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
         
-        /* NYU 포인트 컬러 */
         :root {
-            --primary-color: #57068c; /* NYU 보라색 */
-            --secondary-color: #f1e4ff;
+            --primary-color: #57068c; /* NYU 보라색 - 포인트로만 사용 */
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #eaeaea;
+            --bg-color: #ffffff;
         }
 
-        /* 레이아웃 컨테이너 */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: opacity 0.2s ease;
+        }
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* 중앙 정렬 컨테이너 */
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 5%;
         }
 
-        /* 헤더 (프로필 영역) */
+        /* 상단 헤더 - 미니멀 디자인 */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 80px 0 60px;
-            text-align: center;
+            padding: 100px 0 60px;
+            border-top: 8px solid var(--primary-color); /* 상단 엣지 포인트 */
+            margin-bottom: 40px;
         }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            color: var(--text-main);
             margin-bottom: 10px;
-            letter-spacing: 1px;
         }
-        header p.title {
-            font-size: 1.2em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            /* 텍스트와 로고 수평 정렬 */
+
+        header .subtitle {
+            font-size: 1.25em;
+            font-weight: 400;
+            color: var(--text-muted);
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-bottom: 25px;
         }
+
         .contact-info {
-            display: inline-block;
-            background-color: rgba(255,255,255,0.1);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9em;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* 메인 콘텐츠 영역 */
-        section {
-            padding: 50px 0;
-            border-bottom: 1px solid #eaeaea;
-        }
-        section:last-child {
-            border-bottom: none;
-        }
-        .section-title {
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        /* 카드 스타일 (경력/학력 내용) */
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            transition: transform 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-        .card-header {
+            font-size: 1em;
+            font-weight: 500;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
         }
-        .card-title-group h3 {
-            font-size: 1.3em;
-            color: #222;
-            /* 텍스트와 로고 수평 정렬 */
+
+        /* 섹션 공통 스타일 */
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        /* 2단 레이아웃 (좌측: 기간/위치, 우측: 내용) */
+        .resume-item {
+            display: flex;
+            margin-bottom: 50px;
+        }
+        .resume-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .resume-left {
+            flex: 0 0 220px;
+            padding-right: 30px;
+        }
+
+        .resume-right {
+            flex: 1;
+        }
+
+        /* 텍스트 디테일 */
+        .item-date {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .item-location {
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .item-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
-        }
-        .card-title-group h4 {
-            font-size: 1.1em;
-            color: #666;
-            font-weight: 400;
-            margin-top: 5px;
-        }
-        .card-date {
-            font-size: 0.9em;
-            color: var(--primary-color);
-            background-color: var(--secondary-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        .card-body ul {
-            list-style-type: none;
-        }
-        .card-body ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            color: #555;
-        }
-        .card-body ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
+            color: var(--text-main);
         }
 
-        /* 로고 디자인 설정 */
-        .logo-inline {
-            height: 26px; /* 글자 크기에 맞춘 로고 높이 */
-            border-radius: 4px;
-            background-color: white; /* 투명 로고 보완용 배경 */
-            padding: 2px;
+        .item-subtitle {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
-        header .logo-inline {
-            height: 30px; /* 헤더 타이틀 로고는 약간 더 크게 */
+
+        /* 리스트 스타일 고급화 */
+        .resume-right ul {
+            list-style: none;
+        }
+        
+        .resume-right ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: #444;
+            font-size: 0.98em;
+        }
+
+        .resume-right ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: #ccc; /* 은은한 회색 불릿 */
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-item:hover .resume-right ul li::before {
+            background-color: var(--primary-color); /* 마우스 올렸을 때 보라색으로 강조 */
+        }
+
+        /* 로고 세부 조정 */
+        .logo-inline {
+            height: 24px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+        .logo-large {
+            height: 28px;
         }
 
         /* 푸터 */
         footer {
-            text-align: center;
-            padding: 30px 0;
-            background-color: #222;
-            color: #aaa;
+            padding: 60px 0;
+            text-align: left;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
             font-size: 0.9em;
         }
 
-        /* 반응형 모바일 디자인 */
-        @media (max-width: 600px) {
-            .card-header {
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            .resume-item {
                 flex-direction: column;
             }
-            .card-date {
-                margin-top: 10px;
+            .resume-left {
+                flex: none;
+                margin-bottom: 15px;
+                padding-right: 0;
+            }
+            .item-date {
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .item-location {
+                display: inline-block;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 영역 -->
-    <header>
-        <div class="container">
-            <h1>SEUNGJUN LEE</h1>
-            <p class="title">
-                B.S. Sports Management @ New York University (NYU) 
-                <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline">
-            </p>
-            <div class="contact-info">
-                ✉️ <a href="mailto:sl10863@nyu.edu">sl10863@nyu.edu</a>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
-        
+        <!-- 헤더 영역 -->
+        <header>
+            <div class="header-content">
+                <h1>SEUNGJUN LEE</h1>
+                <div class="subtitle">
+                    B.S. Sports Management @ New York University (NYU)
+                    <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline logo-large">
+                </div>
+                <div class="contact-info">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:sl10863@nyu.edu">sl10863@nyu.edu</a>
+                </div>
+            </div>
+        </header>
+
         <!-- 학력 영역 -->
         <section id="education">
             <h2 class="section-title">Education</h2>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>
-                            New York University (NYU) 
-                            <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline">
-                        </h3>
-                        <h4>B.S. Sports Management</h4>
-                    </div>
+            
+            <div class="resume-item">
+                <div class="resume-left"></div>
+                <div class="resume-right">
+                    <h3 class="item-title">
+                        New York University (NYU)
+                        <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline">
+                    </h3>
+                    <h4 class="item-subtitle">B.S. Sports Management</h4>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>Valor International Scholars</h3>
-                    </div>
+
+            <div class="resume-item">
+                <div class="resume-left"></div>
+                <div class="resume-right">
+                    <h3 class="item-title">Valor International Scholars</h3>
                 </div>
             </div>
         </section>
@@ -225,18 +266,17 @@
         <section id="experience">
             <h2 class="section-title">Internship & Experience</h2>
             
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>
-                            CISV International Program 
-                            <img src="https://logos.hunter.io/cisv.org" alt="CISV Logo" class="logo-inline">
-                        </h3>
-                        <h4>Team Leader | Sweden</h4>
-                    </div>
-                    <div class="card-date">Jul 2025 - Aug 2025</div>
+            <div class="resume-item">
+                <div class="resume-left">
+                    <div class="item-date">Jul 2025 - Aug 2025</div>
+                    <div class="item-location">Sweden</div>
                 </div>
-                <div class="card-body">
+                <div class="resume-right">
+                    <h3 class="item-title">
+                        CISV International Program
+                        <img src="https://logos.hunter.io/cisv.org" alt="CISV Logo" class="logo-inline">
+                    </h3>
+                    <h4 class="item-subtitle">Team Leader</h4>
                     <ul>
                         <li>Represented Korea in a global youth leadership program (10+ countries)</li>
                         <li>Facilitated workshops and resolved cross-cultural group conflicts</li>
@@ -244,15 +284,14 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>Valor International Scholars</h3>
-                        <h4>Resident Assistant (RA) & Teaching Assistant</h4>
-                    </div>
-                    <div class="card-date">Apr 2025 - Jun 2025</div>
+            <div class="resume-item">
+                <div class="resume-left">
+                    <div class="item-date">Apr 2025 - Jun 2025</div>
+                    <div class="item-location">Valor International Scholars</div>
                 </div>
-                <div class="card-body">
+                <div class="resume-right">
+                    <h3 class="item-title">Resident Assistant (RA) & Teaching Assistant</h3>
+                    <h4 class="item-subtitle">Valor International Scholars</h4>
                     <ul>
                         <li>Mentored students in academics and personal development</li>
                         <li>Led structured fitness programs to improve discipline and engagement</li>
@@ -260,18 +299,17 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>
-                            Republic of Korea Marine Corps 
-                            <img src="https://logos.hunter.io/rokmc.mil.kr" alt="ROKMC Logo" class="logo-inline">
-                        </h3>
-                        <h4>Sergeant | Baengnyeongdo, South Korea</h4>
-                    </div>
-                    <div class="card-date">Aug 2023 - Feb 2025</div>
+            <div class="resume-item">
+                <div class="resume-left">
+                    <div class="item-date">Aug 2023 - Feb 2025</div>
+                    <div class="item-location">Baengnyeongdo, South Korea</div>
                 </div>
-                <div class="card-body">
+                <div class="resume-right">
+                    <h3 class="item-title">
+                        Republic of Korea Marine Corps
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Emblem_of_the_Republic_of_Korea_Marine_Corps.svg" alt="ROKMC Logo" class="logo-inline">
+                    </h3>
+                    <h4 class="item-subtitle">Sergeant</h4>
                     <ul>
                         <li>Served as an operator in a K-9 artillery unit, supporting field exercises and unit operations</li>
                         <li>Maintained operational readiness and coordinated effectively with team members during training</li>
@@ -280,15 +318,14 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>Arkpia (NFT Project)</h3>
-                        <h4>Discord Moderator (Intern) | Seoul, Korea</h4>
-                    </div>
-                    <div class="card-date">Sep 2021 - Jun 2022</div>
+            <div class="resume-item">
+                <div class="resume-left">
+                    <div class="item-date">Sep 2021 - Jun 2022</div>
+                    <div class="item-location">Seoul, Korea</div>
                 </div>
-                <div class="card-body">
+                <div class="resume-right">
+                    <h3 class="item-title">Arkpia (NFT Project)</h3>
+                    <h4 class="item-subtitle">Discord Moderator (Intern)</h4>
                     <ul>
                         <li>Managed global Discord community for NFT launch, maintaining consistent brand tone across channels</li>
                         <li>Planned and executed engagement activities to increase community participation</li>
@@ -302,14 +339,11 @@
         <section id="leadership">
             <h2 class="section-title">Leadership & Projects</h2>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>VIS Running Club</h3>
-                        <h4>Founder</h4>
-                    </div>
-                </div>
-                <div class="card-body">
+            <div class="resume-item">
+                <div class="resume-left"></div>
+                <div class="resume-right">
+                    <h3 class="item-title">VIS Running Club</h3>
+                    <h4 class="item-subtitle">Founder</h4>
                     <ul>
                         <li>Built 50+ member running program</li>
                         <li>Organized marathons & school-wide campaigns</li>
@@ -317,31 +351,24 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <h3>Valor Triathlon Team</h3>
-                        <h4>Captain</h4>
-                    </div>
-                </div>
-                <div class="card-body">
+            <div class="resume-item">
+                <div class="resume-left"></div>
+                <div class="resume-right">
+                    <h3 class="item-title">Valor Triathlon Team</h3>
+                    <h4 class="item-subtitle">Captain</h4>
                     <ul>
                         <li>Completed 1,853 km Korea Cycling Grand Slam</li>
                         <li>Raised ~$5,000 through fundraising campaigns</li>
                     </ul>
                 </div>
             </div>
-
         </section>
 
-    </div>
-
-    <!-- 푸터 영역 -->
-    <footer>
-        <div class="container">
+        <!-- 푸터 -->
+        <footer>
             <p>© 2026 Seungjun Lee. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
 </body>
 </html>

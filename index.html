@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seungjun Lee | Portfolio</title>
+    <!-- 구글 폰트 불러오기 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* NYU 포인트 컬러 */
+        :root {
+            --primary-color: #57068c; /* NYU 보라색 */
+            --secondary-color: #f1e4ff;
+        }
+
+        /* 레이아웃 컨테이너 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 헤더 (프로필 영역) */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p.title {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .contact-info {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9em;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* 메인 콘텐츠 영역 */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* 카드 스타일 (경력/학력 내용) */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .card-title-group h3 {
+            font-size: 1.3em;
+            color: #222;
+        }
+        .card-title-group h4 {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        .card-date {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .card-body ul {
+            list-style-type: none;
+        }
+        .card-body ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .card-body ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #222;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        /* 반응형 모바일 디자인 */
+        @media (max-width: 600px) {
+            .card-header {
+                flex-direction: column;
+            }
+            .card-date {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <div class="container">
+            <h1>SEUNGJUN LEE</h1>
+            <p class="title">B.S. Sports Management Candidate @ New York University (NYU)</p>
+            <div class="contact-info">
+                ✉️ <a href="mailto:sl10863@nyu.edu">sl10863@nyu.edu</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- 학력 영역 -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>New York University (NYU)</h3>
+                        <h4>B.S. Sports Management</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Valor International Scholars</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 경력 영역 -->
+        <section id="experience">
+            <h2 class="section-title">Internship & Experience</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>CISV International Program</h3>
+                        <h4>Team Leader | Sweden</h4>
+                    </div>
+                    <div class="card-date">Jul 2025 - Aug 2025</div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Represented Korea in a global youth leadership program (10+ countries)</li>
+                        <li>Facilitated workshops and resolved cross-cultural group conflicts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Valor International Scholars</h3>
+                        <h4>Resident Assistant (RA) & Teaching Assistant</h4>
+                    </div>
+                    <div class="card-date">Apr 2025 - Jun 2025</div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Mentored students in academics and personal development</li>
+                        <li>Led structured fitness programs to improve discipline and engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Republic of Korea Marine Corps</h3>
+                        <h4>Sergeant | Baengnyeongdo, South Korea</h4>
+                    </div>
+                    <div class="card-date">Aug 2023 - Feb 2025</div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Served as an operator in a K-9 artillery unit, supporting field exercises and unit operations</li>
+                        <li>Maintained operational readiness and coordinated effectively with team members during training</li>
+                        <li>Honorably discharged as Sergeant</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Arkpia (NFT Project)</h3>
+                        <h4>Discord Moderator (Intern) | Seoul, Korea</h4>
+                    </div>
+                    <div class="card-date">Sep 2021 - Jun 2022</div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Managed global Discord community for NFT launch, maintaining consistent brand tone across channels</li>
+                        <li>Planned and executed engagement activities to increase community participation</li>
+                        <li>Mediated between creators and users, resolving issues through clear communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 리더십 및 프로젝트 영역 -->
+        <section id="leadership">
+            <h2 class="section-title">Leadership & Projects</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>VIS Running Club</h3>
+                        <h4>Founder</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Built 50+ member running program</li>
+                        <li>Organized marathons & school-wide campaigns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Valor Triathlon Team</h3>
+                        <h4>Captain</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Completed 1,853 km Korea Cycling Grand Slam</li>
+                        <li>Raised ~$5,000 through fundraising campaigns</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Seungjun Lee. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

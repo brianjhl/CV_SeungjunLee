@@ -54,6 +54,12 @@
             font-weight: 300;
             margin-bottom: 20px;
             opacity: 0.9;
+            /* 텍스트와 로고 수평 정렬 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
         .contact-info {
             display: inline-block;
@@ -105,6 +111,11 @@
         .card-title-group h3 {
             font-size: 1.3em;
             color: #222;
+            /* 텍스트와 로고 수평 정렬 */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .card-title-group h4 {
             font-size: 1.1em;
@@ -138,6 +149,17 @@
             font-weight: bold;
         }
 
+        /* 로고 디자인 설정 */
+        .logo-inline {
+            height: 26px; /* 글자 크기에 맞춘 로고 높이 */
+            border-radius: 4px;
+            background-color: white; /* 투명 로고 보완용 배경 */
+            padding: 2px;
+        }
+        header .logo-inline {
+            height: 30px; /* 헤더 타이틀 로고는 약간 더 크게 */
+        }
+
         /* 푸터 */
         footer {
             text-align: center;
@@ -164,7 +186,10 @@
     <header>
         <div class="container">
             <h1>SEUNGJUN LEE</h1>
-            <p class="title">B.S. Sports Management Candidate @ New York University (NYU)</p>
+            <p class="title">
+                B.S. Sports Management @ New York University (NYU) 
+                <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline">
+            </p>
             <div class="contact-info">
                 ✉️ <a href="mailto:sl10863@nyu.edu">sl10863@nyu.edu</a>
             </div>
@@ -179,7 +204,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <h3>New York University (NYU)</h3>
+                        <h3>
+                            New York University (NYU) 
+                            <img src="https://logos.hunter.io/nyu.edu" alt="NYU Logo" class="logo-inline">
+                        </h3>
                         <h4>B.S. Sports Management</h4>
                     </div>
                 </div>
@@ -200,7 +228,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <h3>CISV International Program</h3>
+                        <h3>
+                            CISV International Program 
+                            <img src="https://logos.hunter.io/cisv.org" alt="CISV Logo" class="logo-inline">
+                        </h3>
                         <h4>Team Leader | Sweden</h4>
                     </div>
                     <div class="card-date">Jul 2025 - Aug 2025</div>
@@ -232,7 +263,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-title-group">
-                        <h3>Republic of Korea Marine Corps</h3>
+                        <h3>
+                            Republic of Korea Marine Corps 
+                            <img src="https://logos.hunter.io/rokmc.mil.kr" alt="ROKMC Logo" class="logo-inline">
+                        </h3>
                         <h4>Sergeant | Baengnyeongdo, South Korea</h4>
                     </div>
                     <div class="card-date">Aug 2023 - Feb 2025</div>

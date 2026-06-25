@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Seungjun Lee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 동일한 CSS 구조 */
+        :root { --primary-color: #57068c; --primary-light: #f1e4ff; --text-main: #111827; --text-muted: #4b5563; --border-color: #e5e7eb; --bg-color: #ffffff; --bg-secondary: #f9fafb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-top: 70px; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 15px 0; }
+        .nav-container { max-width: 960px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 700; font-size: 1.1em; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-btn { padding: 8px 16px; background-color: var(--bg-secondary); color: var(--text-muted); border-radius: 6px; font-size: 0.9em; font-weight: 600; border: 1px solid var(--border-color); }
+        .nav-btn:hover { background-color: var(--primary-light); color: var(--primary-color); border-color: var(--primary-light); }
+        .nav-btn.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 5%; }
+        
+        .page-header { padding: 60px 0 40px; border-bottom: 1px solid var(--border-color); margin-bottom: 50px; background-color: var(--bg-secondary); }
+        .page-header h1 { font-size: 2.5em; color: var(--text-main); }
+        
+        .section-title { font-size: 0.9em; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-color); font-weight: 700; margin-bottom: 50px; }
+        .resume-item { display: flex; margin-bottom: 50px; }
+        .resume-left { flex: 0 0 220px; padding-right: 30px; }
+        .resume-right { flex: 1; background: white; padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .item-date { font-weight: 600; color: var(--primary-color); margin-bottom: 4px; }
+        .item-title { font-size: 1.4em; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .item-subtitle { font-size: 1.05em; color: var(--text-muted); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); }
+        .resume-right ul { list-style: none; }
+        .resume-right ul li { position: relative; padding-left: 24px; margin-bottom: 12px; color: var(--text-muted); }
+        .resume-right ul li::before { content: '→'; position: absolute; left: 0; color: var(--primary-color); opacity: 0.6; }
+        footer { padding: 40px 0; text-align: center; background-color: var(--bg-secondary); color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 50px; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        @media (max-width: 768px) { .resume-item { flex-direction: column; } .resume-left { margin-bottom: 15px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">SEUNGJUN LEE</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-btn">Home</a>
+                <a href="experience.html" class="nav-btn">Experience</a>
+                <a href="projects.html" class="nav-btn active">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header fade-in">
+        <div class="container">
+            <h1>Leadership & Projects</h1>
+        </div>
+    </div>
+
+    <div class="container fade-in">
+        <section>
+            <h2 class="section-title">Extracurricular & Athletics</h2>
+            
+            <div class="resume-item">
+                <div class="resume-left"><div class="item-date">Leadership</div></div>
+                <div class="resume-right">
+                    <h3 class="item-title">VIS Running Club</h3>
+                    <h4 class="item-subtitle">Founder</h4>
+                    <ul>
+                        <li>Founded and scaled a community running program to 50+ active members from the ground up.</li>
+                        <li>Orchestrated local marathons and school-wide health campaigns.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-left"><div class="item-date">Athletic Achievement</div></div>
+                <div class="resume-right">
+                    <h3 class="item-title">Valor Triathlon Team</h3>
+                    <h4 class="item-subtitle">Captain</h4>
+                    <ul>
+                        <li>Successfully completed the rigorous 1,853 km Korea Cycling Grand Slam.</li>
+                        <li>Spearheaded fundraising initiatives, successfully raising approximately $5,000.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer><p>© 2026 Seungjun Lee.</p></footer>
+</body>
+</html>
